@@ -3,6 +3,7 @@ console.log("Welcome to User Registration !");
 const NAME_PATTERN = /^[A-Z][A-Za-z]{2,}$/;
 const EMAIL_PATTERN = /^([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*$/;
 const MOBILE_NUMBER_PATTERN = /^\d{2}[-\.\s]\d{10}$/;
+const PASSWORD_PATTERN = /^(?=.{8,}).*$/;
 
 const input = require('readline-sync');
 const validate = (pattern, input) => pattern.test(input);
@@ -54,3 +55,16 @@ var validateMobileNuber = function(){
         console.log("mobile number is invalid");
 }
 validateMobileNuber();
+
+
+/**
+ *  @description Password Validation
+ */
+var validatePassword = function(){
+    password = input.question("Enter your password:")
+    if(validate(PASSWORD_PATTERN, password))
+        console.log("password  is valid !");
+    else
+        console.log("password is invalid");
+}
+validatePassword();
