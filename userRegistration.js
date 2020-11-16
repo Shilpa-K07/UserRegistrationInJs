@@ -16,3 +16,15 @@ var validateFirstName = function(){
         console.log("First name is invalid");
 }
 validateFirstName();
+
+/**
+ *  @description Last name validation
+ */
+var validateLastName = function(){
+    lastName = input.question("Enter your last name: ");
+    if(validate(NAME_PATTERN, lastName))
+        console.log("Last name is valid !");
+    else
+        console.log("Last name is invalid");
+}
+validateLastName();
