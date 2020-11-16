@@ -1,6 +1,7 @@
 console.log("Welcome to User Registration !");
 
 const NAME_PATTERN = /^[A-Z][A-Za-z]{2,}$/;
+const EMAIL_PATTERN = /^([0-9A-Za-z])+([-+._][0-9A-Za-z]+)*@([0-9A-Za-z])+[.]([a-zA-Z])+([.][A-Za-z]+)*$/;
 
 const input = require('readline-sync');
 const validate = (pattern, input) => pattern.test(input);
@@ -28,3 +29,15 @@ var validateLastName = function(){
         console.log("Last name is invalid");
 }
 validateLastName();
+
+/**
+ *  @description Email Validation
+ */
+var validateEmail = function(){
+    emailID = input.question("Enter your email id:")
+    if(validate(EMAIL_PATTERN, emailID))
+        console.log("Email Id is valid !");
+    else
+        console.log("Email Id is invalid");
+}
+validateEmail();
